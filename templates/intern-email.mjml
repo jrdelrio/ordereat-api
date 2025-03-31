@@ -1,0 +1,96 @@
+<mjml>
+  <mj-head>
+    <mj-title>Nuevo Mensaje de OrderEat</mj-title>
+    <mj-style inline="inline">
+      .red-text { color: #FF3553 !important; }
+      .section-spacing { padding: 20px 0; }
+      /* Estilo mejorado para los botones */
+      .whatsapp-button {
+      display: inline-block;
+      padding: 12px 20px;
+      border: 2px solid #25D366;
+      border-radius: 10px;
+      color: #25D366 !important;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 10px 0;
+      background-color: transparent;
+      }
+      .whatsapp-button img {
+      height: 20px;
+      margin-right: 10px;
+      vertical-align: middle;
+      }
+      .contact-data {
+      margin-bottom: 30px;
+      font-size: 16px
+      }
+      @media only screen and (max-width:480px) {
+    .whatsapp-button {
+      display: block !important;
+      width: 100% !important;
+      text-align: center !important;
+      margin: 10px auto !important;
+    }
+  }
+    </mj-style>
+  </mj-head>
+  <mj-body>
+    <mj-section css-class="section-spacing" background-color="#f4f4f4">
+      <mj-column>
+        <mj-text font-size="20px" font-weight="bold" align="center">Estimado equipo de <span style="color: #FF3553">OrderEat</span>, se ha recibido un mensaje a través del formulario web.</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section css-class="section-spacing">
+      <mj-column>
+        <mj-text font-size="20px" font-weight="bold"> Los datos del contacto son:</mj-text>
+        <mj-text>
+          <p class="contact-data"><strong>Nombre:</strong> <span class="red-text">{{from_name}}</span></p>
+          <p class="contact-data"><strong>Colegio:</strong> <span class="red-text">{{from_school}}</span></p>
+          <p class="contact-data"><strong>Cargo:</strong> <span class="red-text">{{from_position}}</span></p>
+          <p class="contact-data"><strong>Correo:</strong> <span class="red-text">{{from_email}}</span></p>
+          <p class="contact-data"><strong>Teléfono:</strong> <span class="red-text">{{from_phone}}</span></p>
+          <p class="contact-data"><strong>Recibido el:</strong> <span class="red-text">{{timestamp}}</span></p>
+          <p class="contact-data"><strong>Mensaje recibido:</strong></p>
+          <p class="contact-data"><span class="red-text">{{from_message}}</span></p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section>
+      <mj-column>
+        <mj-divider border-color="#cccccc" />
+      </mj-column>
+    </mj-section>
+
+    <mj-section>
+      <mj-column width="100%" padding="0px" vertical-align="middle">
+        <mj-text align="center">
+          <a href="https://wa.me/56965669585" class="whatsapp-button" style="display: inline-block; padding: 12px 20px; border: 2px solid #25D366; border-radius: 10px; color: #25D366 !important; text-decoration: none; font-weight: bold; margin: 10px 0; background-color: transparent;">
+            <img src="https://ci3.googleusercontent.com/meips/ADKq_NZHjvYLblWzs3YkVY8pamkNtwKg7Txyt2wfOWAgF7DGjvCG_8YRhqAm4x8kk8iBCXCkWk0uACgEu1LooCaLMLVZKJjIVvfLcnSD4o7qsHFak6Ez-QWKuypwjc2o_f0Uo_7oG_Pcrfw-hpTvC0ir6Vg-iNIxnGJRJNgQpLlpNKn6hcT3a1w=s0-d-e1-ft#https://github.com/jrdelrio/chilisites-landing-2.0-backend/blob/main/templates/img/whatsapp-brands.png" style="height:20px; margin-right: 10px; vertical-align: middle;" alt="WhatsApp" />
+            Marketing Digital
+          </a>
+        </mj-text>
+      </mj-column>
+
+     <mj-column width="100%" padding="0px" vertical-align="middle">
+        <mj-text align="center">
+          <a href="https://wa.me/56984138467" class="whatsapp-button" style="display: inline-block; padding: 12px 20px; border: 2px solid #25D366; border-radius: 10px; color: #25D366 !important; text-decoration: none; font-weight: bold; margin: 10px; background-color: transparent;">
+            <img src="https://ci3.googleusercontent.com/meips/ADKq_NZHjvYLblWzs3YkVY8pamkNtwKg7Txyt2wfOWAgF7DGjvCG_8YRhqAm4x8kk8iBCXCkWk0uACgEu1LooCaLMLVZKJjIVvfLcnSD4o7qsHFak6Ez-QWKuypwjc2o_f0Uo_7oG_Pcrfw-hpTvC0ir6Vg-iNIxnGJRJNgQpLlpNKn6hcT3a1w=s0-d-e1-ft#https://github.com/jrdelrio/chilisites-landing-2.0-backend/blob/main/templates/img/whatsapp-brands.png" style="height:20px; margin-right: 10px; vertical-align: middle;" alt="WhatsApp" />
+            Desarrollo Web
+          </a>
+        </mj-text>
+      </mj-column>
+
+    </mj-section>
+
+    <mj-section>
+      <mj-column>
+        <mj-image src="https://ci3.googleusercontent.com/meips/ADKq_Nb4B-h1YUsGc405myTrGT9li21gfHQr-9H0rTe_DaGXzu0wNjbrqMfF42X08fliMLSWTsMu60zrJ0TpwvRZInwWKE-7M_tbpwsNzD4YqXSTMHA7U_YmvwvghtD9deqXsbVw4MT4kaAwvjzK2CxGYYvW53V_pmbewbzGuBMUFfjgwDIXzPSHsTtBwbWeJ1ltMnLf=s0-d-e1-ft#https://github.com/jrdelrio/chilisites-landing-2.0-backend/blob/main/templates/img/logo-chilisites-fondo-solido.png?raw=true" alt="Logo de Chilisites" padding-bottom="10px" padding-top="10px" height="100px" width="100px" align="center" />
+        <mj-text align="center" font-size="18px">Equipo de <strong>🌶️Chilisites</strong> 😎</mj-text>
+      </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml>
