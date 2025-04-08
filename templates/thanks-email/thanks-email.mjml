@@ -12,8 +12,8 @@
   <mj-body background-color="#ffffff">
     <mj-section padding="20px 0">
       <mj-column>
-        <mj-image width="200px" align="center" src="./img/logo.svg" alt="orderEAT logo" />
-        <mj-image width="450px" align="center" src="./img/ilustracion.png" alt="Imagen principal" />
+        <mj-image width="200px" align="center" src="https://raw.githubusercontent.com/jrdelrio/ordereat-api/38013f61b5b07e7474be2fe5545887f43191f053/templates/thanks-email/img/logo.svg" alt="orderEAT logo" />
+        <mj-image width="450px" align="center" src="https://github.com/jrdelrio/ordereat-api/blob/main/templates/thanks-email/img/ilustracion.png?raw=true" alt="Imagen principal" />
       </mj-column>
     </mj-section>
 
@@ -41,7 +41,7 @@
     <mj-section background-color="#FF3553" padding="30px 25px">
       <mj-column width="100%" vertical-align="middle">
         
-        <mj-image href="https://ordereat.com/" src="./img/logo-font-white.svg" alt="orderEAT logo" width="200px" align="left" padding="0px" /></a>
+        <mj-image href="https://ordereat.com/" src="https://raw.githubusercontent.com/jrdelrio/ordereat-api/38013f61b5b07e7474be2fe5545887f43191f053/templates/thanks-email/img/logo-font-white.svg" alt="orderEAT logo" width="200px" align="left" padding="0px" /></a>
       </mj-column>
 
       
