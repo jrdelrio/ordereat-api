@@ -3,7 +3,20 @@
     <mj-title>Gracias por tu contacto – orderEAT</mj-title>
     <mj-style inline="inline"> .blog-button { color: #ffffff !important; text-decoration: none; } </mj-style>
 
+    <!-- estilo para el boton del blog -->
+    <mj-style inline="inline">
+      .blog-button {
+        color: #ffffff !important;
+        text-decoration: none;
+        letter-spacing: 1px;
+      }
+    </mj-style>
+
+    <!-- google fonts -->
+    <mj-font name="Inter Tight" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" />
+
     <mj-attributes>
+      <mj-all font-family="Inter Tight, Helvetica, Arial, sans-serif" />
       <mj-button padding="20px 40px" />
       <mj-class name="red-btn" href="" color="#ffffff" border-radius="20px" font-size="16px" font-weight="400" background-color="#FF3553" margin-top="30px" width="320px" />
     </mj-attributes>
@@ -12,28 +25,28 @@
   <mj-body background-color="#ffffff">
     <mj-section padding="20px 0">
       <mj-column>
-        <mj-image width="200px" align="center" src="https://raw.githubusercontent.com/jrdelrio/ordereat-api/38013f61b5b07e7474be2fe5545887f43191f053/templates/thanks-email/img/logo.png" alt="orderEAT logo" />
+        <mj-image width="200px" align="center" src="https://github.com/jrdelrio/ordereat-api/blob/main/templates/thanks-email/img/logo.png?raw=true" alt="orderEAT logo" />
         <mj-image width="450px" align="center" src="https://github.com/jrdelrio/ordereat-api/blob/main/templates/thanks-email/img/ilustracion.png?raw=true" alt="Imagen principal" />
       </mj-column>
     </mj-section>
 
     <mj-section padding="10px 25px">
       <mj-column>
-        <mj-text align="left" font-size="16px" color="#2C2C2C" font-family="Helvetica, Arial, sans-serif" font-weight="bold"> Hola {{from_name}}, </mj-text>
+        <mj-text align="left" font-size="16px" color="#2C2C2C" font-weight="bold"> Hola {{from_name}}, </mj-text>
 
-        <mj-text align="left" font-size="16px" font-weight="bold" color="#2C2C2C" font-family="Helvetica, Arial, sans-serif"> ¡Gracias por ponerte en contacto con nosotros! </mj-text>
+        <mj-text align="left" font-size="16px" font-weight="bold" color="#2C2C2C" > ¡Gracias por ponerte en contacto con nosotros! </mj-text>
 
-        <mj-text align="left" font-size="14px" color="#2C2C2C" font-family="Helvetica, Arial, sans-serif" padding-top="10px">
+        <mj-text align="left" font-size="14px" color="#2C2C2C" padding-top="10px">
           Hemos recibido tu solicitud y uno de nuestros ejecutivos se pondrá en contacto contigo a la brevedad para agendar una reunión y resolver todas tus dudas.
         </mj-text>
 
-        <mj-text align="left" font-size="14px" color="#2C2C2C" font-family="Helvetica, Arial, sans-serif" padding-top="10px">
+        <mj-text align="left" font-size="14px" color="#2C2C2C" padding-top="10px">
           Mientras tanto, te invitamos a visitar nuestro blog, donde compartimos contenido útil, novedades y consejos que podrían interesarte.
         </mj-text>
 
-        <mj-text align="left" font-size="14px" color="#2C2C2C" font-family="Helvetica, Arial, sans-serif" padding-top="10px"> ¡Nos vemos pronto! </mj-text>
+        <mj-text align="left" font-size="14px" color="#2C2C2C" padding-top="10px"> ¡Nos vemos pronto! </mj-text>
 
-        <mj-button href="https://ordereat.com/blog" mj-class="red-btn" align="center"> VISITA NUESTRO BLOG </mj-button>
+        <mj-button href="https://ordereat.com/blog" mj-class="red-btn blog-button" align="center"> VISITA NUESTRO BLOG </mj-button>
 
       </mj-column>
     </mj-section>
@@ -41,7 +54,7 @@
     <mj-section background-color="#FF3553" padding="30px 25px">
       <mj-column width="100%" vertical-align="middle">
         
-        <mj-image href="https://ordereat.com/" src="https://raw.githubusercontent.com/jrdelrio/ordereat-api/38013f61b5b07e7474be2fe5545887f43191f053/templates/thanks-email/img/logo-font-white.png" alt="orderEAT logo" width="200px" align="left" padding="0px" /></a>
+        <mj-image href="https://ordereat.com/" src="https://github.com/jrdelrio/ordereat-api/blob/main/templates/thanks-email/img/logo-font-white.png?raw=true" alt="orderEAT logo" width="200px" align="left" padding="0px" /></a>
       </mj-column>
 
       
