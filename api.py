@@ -10,13 +10,22 @@ load_dotenv()
 app = Flask(__name__)
 
 
-# CORS(app, resources={"*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": ["http://127.0.0.1:5001", "http://127.0.0.1:5002", "http://localhost:5002", "null"]}})
+
+RESEND_API_KEY = os.getenv("RESEND_API_KEY")
+# print("🔑 RESEND_API_KEY =", os.getenv("RESEND_API_KEY"))
+
+
+@app.before_request
+def log_origin():
+    print(f"📡 Origin de la solicitud: {request.headers.get('Origin')}")
+
 
 
 # test connection
 @app.route("/test-connection", methods=["GET"])
 def test_connection():
-    print("Received request to test connection")
+    print("✅Received request to test connection")
     return jsonify({
         "status": "ok", 
         "message": "Conexión exitosa con la API de OrderEat 🚀"
@@ -28,7 +37,7 @@ def test_connection():
 def ordereat_send_intern_email():
     data = request.json
 
-    file_path = os.path.join(os.path.dirname(__file__), "./templates", "intern-email.html")
+    file_path = os.path.join(os.path.dirname(__file__), "./templates/intern-email", "intern-email.html")
 
     with open(file_path, "r", encoding="utf-8") as file:
         
@@ -48,13 +57,13 @@ def ordereat_send_intern_email():
             email_template = email_template.replace(var, value)
     
     try:
-        resend.api_key = os.getenv("RESEND_API_KEY")
+        resend.api_key = RESEND_API_KEY
         if not resend.api_key:
             raise ValueError("API key not found in environment variables.")
         
         params_for_email = {
-            "from": "🌶️chiliSites <contacto@chilisites.com>",
-            "to": [],                           # a que mail ordereat quieren que les llegue?
+            "from": "🌶️chiliSites - Contact <contacto@chilisites.com>",
+            "to": ["jrdelriodom@gmail.com"],                           # a que mail ordereat quieren que les llegue?
             "subject": f"Nuevo mensaje de {data.get('fromName', '** SIN NOMBRE **')}",
             "html": email_template,
         }
@@ -67,46 +76,50 @@ def ordereat_send_intern_email():
             print("✅ Correo interno enviado correctamente")
             
         return jsonify({
-            "message": "Correo enviado ✅",
+            "message": "Correo interno enviado a ordereat ✅",
             "status": "ok"
             }), 200
     except Exception as e:
         print("❌ Error al enviar el correo:", str(e))
         return jsonify({"error": "❌ No se pudo enviar el correo interno"}), 500
 
+
 @app.route("/send-thanks-email", methods=["POST"])
 def ordereat_send_email():
     data = request.json
 
-    file_path = os.path.join(os.path.dirname(__file__), "orderEat/templates", "thanks-email.html")
+    file_path = os.path.join(os.path.dirname(__file__), "./templates/thanks-email", "thanks-email.html")
     
     with open(file_path, "r", encoding="utf-8") as file:
         
         email_template = file.read()
         
         template_vars = {
-            "{{from_name}}": data.get("name", "")
+            "{{from_name}}": data.get("fromName", "")
         }
         
         for var, value in template_vars.items():
             email_template = email_template.replace(var, value)
 
     try:
-        resend.api_key = os.getenv("RESEND_API_KEY_ORDEREAT")
+        resend.api_key = os.getenv("RESEND_API_KEY")
         params: resend.Emails.SendParams = {
-            "from": "Acme <onboarding@resend.dev>", # mail de order 
-            "to": [data['email']],
+            "from": "Equipo OrderEAT <contacto@ordereat.com>",
+            "to": [data['fromEmail']],
             "subject": "Hemos recibido tu mensaje!",
             "html": email_template,
         }
         
-        print("✅ Correo de agradecimiento enviado correctamente:")
+        email = resend.Emails.send(params)
+        
+        if email:
+            print("✅ Correo de agradecimiento enviado correctamente:")
         
         return jsonify({"message": "Correo de agradecimiento enviado correctamente ✅"}), 200
     
     except Exception as e:
         print("❌ Error al enviar el correo de agradecimiento:", str(e))
-        return jsonify({"error": "No se pudo enviar el correo de agradecimiento ❌"}), 500
+        return jsonify({"error": r"No se pudo enviar el correo de agradecimiento ❌. Error: {str(e)}"}), 500
 
 
 
