@@ -10,7 +10,7 @@ load_dotenv()
 app = Flask(__name__)
 
 
-CORS(app, resources={r"/*": {"origins": ["http://127.0.0.1:5001", "http://127.0.0.1:5002", "http://localhost:5002", "null"]}})
+CORS(app, resources={r"/*": {"origins": ["http://localhost:5001", "null"]}})
 
 RESEND_API_KEY = os.getenv("RESEND_API_KEY")
 # print("🔑 RESEND_API_KEY =", os.getenv("RESEND_API_KEY"))
@@ -124,5 +124,5 @@ def ordereat_send_email():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5000)
     
