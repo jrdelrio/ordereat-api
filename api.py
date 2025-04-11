@@ -10,7 +10,7 @@ load_dotenv()
 app = Flask(__name__)
 
 
-CORS(app, resources={r"/*": {"origins": ["http://localhost:5001", "null"]}})
+CORS(app, resources={r"/*": {"origins": ["http://localhost:5001", "https://landing.ordereat.com"]}})
 
 RESEND_API_KEY = os.getenv("RESEND_API_KEY")
 # print("🔑 RESEND_API_KEY =", os.getenv("RESEND_API_KEY"))
